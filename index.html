@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="style.css" />
+	<title>Vue Test</title>
+</head>
+
+<body>
+	<h1 id="title">Vue.Js Practice</h1>
+
+	<div id="app">
+		<h3>App 1</h3>
+		{{ message }}
+	</div>
+
+	<div id="app-2">
+		<h3>App 2</h3>
+		<span v-bind:title="message">
+			Hover mouse for a message
+		</span>
+	</div>
+
+	<div id="app-3">
+		<h3>App 3</h3>
+		<span v-if="seen">Now you see me</span>
+	</div>
+
+	<div id="app-4">
+		<h3>App 4</h3>
+		<ol>
+			<li v-for="todo in todos">
+				{{ todo.text }}
+			</li>
+		</ol>
+	</div>
+
+	<div id="app-5">
+		<h3>App 5</h3>
+
+		<p>{{ message }}</p>
+		<button v-on:click='reverseMessage'>Reverse Message</button>
+	</div>
+
+	<div id="app-6">
+		<h3>App 6</h3>
+
+		<p>{{ message }}</p>
+		<input v-model="message">
+	</div>
+
+	<div id="app-7">
+		<h3>App 7</h3>
+
+		<ol>
+			<todo-item v-for="item in groceryList" v-bind:todo='item' v-bind:key='item.id'>
+			</todo-item>
+		</ol>
+	</div>
+
+	<div id="app-8">
+		<h3>App 8</h3>
+
+		<ol>
+			<todo-item v-for="todo in todos" v-bind:todo="todo" v-bind:key="todo.id">
+			</todo-item>
+		</ol>
+
+		<input v-model="newTodo" v-on:keyup.enter="addTodo">
+		<button v-on:click="addTodo">Add Todo</button>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+	<script src="index.js"></script>
+</body>
+
+</html>
